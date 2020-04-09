@@ -1,0 +1,39 @@
+0. change directory to source code directory.
+1. run npm init
+2. run npm install express ejs body-parser --save
+3a. Create a folder "views" in main project directory and place all source files (HTML) there. Change all .html extensions to .ejs
+3b. Create a folder "public" inside the main project directory and place all image and css files.  
+4. Create file named "index.js" in main project directory
+5. Add the following lines to index.js
+
+var express = require("express");
+var app = express();
+var bodyParser= require("body-parser");
+
+const port = process.env.PORT || 3000;
+
+app.use(express.static("public"));
+
+app.set('view engine', 'ejs');
+
+app.get("/", (req,res) => {
+    res.render("site-main.ejs");  <-- Change to main html file
+});
+
+app.listen(port, () => {
+    console.log("Server running on port 3000");
+});
+
+6. Create a file named "Procfile" in main project directory
+7. Add the following text to the Procfile
+web: node index.js
+
+8. add, commit, and push all changes to git
+
+9. login to heroku
+
+10. Create a new app
+
+11. change source to git and enter git credentials and repository information
+
+12. Click Deploy
