@@ -39,8 +39,24 @@
 } */
 
 .bg-primary {
-  background-color: #f4623a !important;
+  background-color: #e96b56 !important;
   color: white
+}
+
+.t-white{
+  color:#444444;
+}
+
+/* .fa-question-circle:hover{
+  color:white;
+} */
+
+.pd-1{
+  padding-bottom: 5px;
+}
+
+.fa-question-circle{
+  color:inherit;
 }
 
 
@@ -673,7 +689,7 @@ section {
   transition: all ease-in-out 0.3s;
 }
 
-.featured .icon-box i {
+.featured .icon-box i,  .featured .icon-box svg{
   color: #e96b56;
   font-size: 42px;
   margin-bottom: 15px;
@@ -702,7 +718,7 @@ section {
   background: #e96b56;
 }
 
-.featured .icon-box:hover i, .featured .icon-box:hover h3 a, .featured .icon-box:hover p {
+.featured .icon-box:hover i, .featured .icon-box:hover h3 a, .featured .icon-box:hover p ,  .featured .icon-box:hover svg{
   color: #fff;
 }
 
