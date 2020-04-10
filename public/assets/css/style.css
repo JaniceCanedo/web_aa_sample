@@ -5,6 +5,43 @@
 * License: https://bootstrapmade.com/license/
 */
 
+/*--------------------------------------------------------------
+# Custom
+--------------------------------------------------------------*/
+.jc1{
+  color: #ffffff;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.jc2{
+  color: #2e2e2e;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.page-section {
+  padding: 8rem 0;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+/* .container {
+  min-width: 992px !important;
+} */
+
+.bg-primary {
+  background-color: #f4623a !important;
+  color: white
+}
 
 
 /*--------------------------------------------------------------
@@ -142,6 +179,16 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 40px;
 }
 
+#header .header-h-stick {
+  position: fixed;
+  width: 100vw;
+  background-color: #fff;
+}
+
+#header.header-h-stick {
+  position: fixed;
+  width: 100vw;
+}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -355,8 +402,6 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav-active .mobile-nav-toggle i {
   color: #fff;
 }
-
-
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -2189,5 +2234,3 @@ section {
   font-size: 13px;
   color: #fff;
 }
-
-
