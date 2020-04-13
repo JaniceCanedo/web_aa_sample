@@ -7,6 +7,29 @@
 !(function($) {
   "use strict";
 
+    // Smooth scrolling using jQuery easing
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        console.log(this)
+        console.log(this.hash)
+        console.log($(this.hash))
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: (target.offset().top - 72)
+          }, 1000, "easeInOutExpo");
+          return false; 
+        } else {
+          var s = "/index"+this.hash;
+          console.log(this.hostname);
+          console.log(s);
+          window.location.href = s;
+        }
+      }
+    });
+
   // Smooth scroll for the navigation menu and links with .scrollto classes
   $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {

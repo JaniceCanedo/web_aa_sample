@@ -20,7 +20,6 @@
 .jc2{
   color: #2e2e2e;
   margin-bottom: 30px;
-  margin-top: 50px;
   font-size: 48px;
   font-weight: 700;
   text-align: center;
@@ -58,6 +57,11 @@
 
 .f-bold{
   font-weight: bold;
+}
+
+.readings-main .container{
+  padding-top: 250px;
+  flex-direction: row;
 }
 
 
@@ -115,6 +119,8 @@
   margin-top: 1px;
   margin-bottom: 25px;
 }
+
+
 
 
 /*--------------------------------------------------------------
@@ -702,12 +708,31 @@ section {
   background: #f7f7f7;
   border-bottom: 1px solid #ededed;
   margin-bottom: 40px;
+  /* padding-top: 100px; */
+  padding-left:35px
 }
 
 .breadcrumbs h2 {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   color: #545454;
+  padding-left: 35px
+}
+
+.breadcrumbs h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #545454;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.breadcrumbs h4 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #545454;
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 .breadcrumbs ol {
@@ -717,6 +742,7 @@ section {
   padding: 0 0 5px 0;
   margin: 0;
   font-size: 14px;
+  padding-left: 35px;
 }
 
 .breadcrumbs ol li + li {
@@ -2137,6 +2163,45 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Meeting
+--------------------------------------------------------------*/
+
+.meeting-nav a {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #434343;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  min-width: 8em;
+  text-align: center;
+}
+
+.meeting-nav a:hover {
+    background: #e96b56;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+    min-width: 10em;
+    text-align: center;
+  }
+
+  .meeting-nav .container{
+    justify-content: center;
+    align-items: center;
+  }
+
+  .meeting-nav .btn-padding{
+    padding-left: 2.5px;
+    padding-right: 2.5px;
+  }
+
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 #footer {
@@ -2197,11 +2262,17 @@ section {
   background: #3b3b3b;
   border-top: 1px solid #474747;
   border-bottom: 1px solid #474747;
-  padding: 60px 0 30px 0;
+  padding: 15px 0 10px 0;
+  justify-content: center;
+}
+
+#footer .container {
+  justify-content: center;
 }
 
 #footer .footer-top .footer-info {
   margin-bottom: 30px;
+  
 }
 
 #footer .footer-top .footer-info h3 {
@@ -2307,3 +2378,5 @@ section {
   font-size: 13px;
   color: #fff;
 }
+
+
