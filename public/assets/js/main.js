@@ -4,9 +4,8 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-!(function($) {
-  "use strict";
 
+$(document).ready(function(){
     // Smooth scrolling using jQuery easing
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
       if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -214,4 +213,24 @@
     items: 1
   });
 
-})(jQuery);
+
+  $('.meeting-trigger').on('click', function (e) {
+    e.preventDefault();
+    $.ajax({
+        url: $(this).attr('href'),
+        data: {},
+        type: 'GET',
+        success: function(data)
+          {
+            //console.log('yay')
+              $('#target').html(data)
+          },
+          error: function()
+          {
+            console.log('error ajax')
+            //alert("Failed to get data.");
+        }
+    });
+  });
+})
+
