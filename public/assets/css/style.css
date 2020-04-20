@@ -262,11 +262,13 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   width: 100vw;
   background-color: #fff;
+  
 }
 
 #header.header-h-stick {
   position: fixed;
   width: 100vw;
+  height: fit-content;
 }
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -2197,10 +2199,56 @@ section {
   }
 
   .meeting-nav .btn-padding{
-    padding-left: 2.5px;
-    padding-right: 2.5px;
+    padding-left: .1rem;
+    padding-right: .1rem;
+    min-width: 10rem;
   }
 
+  .meeting-nav .btn-padding-2{
+    padding-left: .1rem;
+    padding-right: .1rem;
+    min-width: 10rem;
+    align-self: center;
+  }
+
+  .meeting-nav .tbl{
+    padding: 2rem;
+    
+  }
+
+  .table-dark{
+    background: #404040;
+  }
+
+  .meeting-nav .col-att{
+    column-width: 12rem;
+  }
+
+
+
+  /*
+  .meeting-nav .card-body{
+    background-color: #f7f7f7;
+    outline-width: 1px;
+    outline-color: #ededed;
+  } */
+
+  .meeting-nav .card:hover{
+    border: none;
+    margin-top: 2rem;
+    color: #fff;
+    background: #949494;
+  }
+
+  .meeting-nav .card{
+    border: none;
+    margin-top: 2rem;
+  }
+
+
+  
+
+  
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

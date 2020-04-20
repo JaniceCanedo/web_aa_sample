@@ -29,6 +29,24 @@ $(document).ready(function(){
       }
     });
 
+
+    $(document).on('click','.copy-btn', function(){
+    console.log("HERE");
+    var copyText = document.getElementById('mt-card-0').innerText;
+    copyText = copyText.replace(/\n/g, " ")
+    var input = document.createElement('input');
+    input.setAttribute('value', copyText);
+    document.body.appendChild(input);
+    input.select();
+    var result = document.execCommand("copy");
+
+    console.log(result);
+    console.log(copyText);
+
+    document.body.removeChild(input);
+    document.execCommand("copy");
+  })
+
   // Smooth scroll for the navigation menu and links with .scrollto classes
   $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -233,4 +251,8 @@ $(document).ready(function(){
     });
   });
 })
+
+
+
+
 
