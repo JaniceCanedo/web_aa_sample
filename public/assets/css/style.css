@@ -2196,18 +2196,24 @@ section {
   .meeting-nav .container{
     justify-content: center;
     align-items: center;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
   }
 
   .meeting-nav .btn-padding{
-    padding-left: .1rem;
-    padding-right: .1rem;
-    min-width: 10rem;
+    margin-left: 2px;
+    margin-right: 2px;
+    min-width: inherit;
+  }
+
+  .meeting-nav .a-btn-padding{
+    margin: 2px 2px 2px 2px;
+    min-width: 140px;
   }
 
   .meeting-nav .btn-padding-2{
-    padding-left: .1rem;
-    padding-right: .1rem;
-    min-width: 10rem;
+    margin: 10px 10px 10px 10px;
+    min-width: 100px;
     align-self: center;
   }
 
@@ -2226,23 +2232,28 @@ section {
 
 
 
-  /*
+  
   .meeting-nav .card-body{
-    background-color: #f7f7f7;
+    /* background-color: #f7f7f7;
     outline-width: 1px;
-    outline-color: #ededed;
-  } */
+    outline-color: #ededed; */
+    min-height: 175px;
+  }
 
   .meeting-nav .card:hover{
     border: none;
-    margin-top: 2rem;
+    margin: 5px 5px 5px 5px;
+    padding: 0px 0px 0px 0px;
     color: #fff;
     background: #949494;
+    max-width: 350px;
   }
 
   .meeting-nav .card{
-    border: none;
-    margin-top: 2rem;
+    /* border: none; */
+    margin: 5px 5px 5px 5px;
+    padding: 0px 0px 0px 0px;
+    max-width: 350px;
   }
 
 

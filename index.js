@@ -55,6 +55,7 @@ app.get("/day", (req,res) =>{
 
     var q = "SELECT h.GROUP_NM as \'Home Group\', h.LOC_NM  as \'Location\'," +
             " m.DY as \'Meeting Day\', m.M_TIME \'Meeting Time\', m.M_TYPE \'Meeting Type\'," +
+            "CONCAT(ADDR_L1, \' \', CITY, \' \', ST , \' \', ZIP) \'Address\'," +
             " m.M_TOPIC \'Meeting Topic\', m.NOTE \'Notes\' FROM MEETING m inner join HOME_GROUP h on h.ROW_ID = m.HOME_GROUP_ID WHERE DY='" + req.query.d +"' ORDER BY SUBSTRING(m.M_TIME,-2), m.M_TIME";
     var out = "";
     con.query(q, function (err, result, fields) {
@@ -96,15 +97,16 @@ app.get("/day", (req,res) =>{
         
         
         out+="<div class=\"container col-lg-12 flex\">";
-        out+="<div class=\"row\">";
+        out+="<div class=\"row d-flex justify-content-center\">";
         for(var row in result){
             out += "<div class=\"card col-lg-4 col-md-6\" id=\"mt-card-"+row+"\" >";
             out += "<h5 class=\"card-header\">"+result[row]['Home Group'] +" @ "+ result[row]['Meeting Time'] +" </h5> " +
             "<div class=\"card-body\"> "+ 
             "<h5 class=\"card-title\">Topic: "+result[row]['Meeting Topic']+" </h5> " +
             "<p class=\"card-text\">Location: "+result[row]['Location']+"</br> Meeting: "+result[row]['Meeting Type']+"</br> Notes: "+result[row]['Notes']+"</p> " +
-            "<a href=\"#\" class=\"btn btn-primary btn-padding-2\">Map It</a>" +
-            "<a class=\"btn btn-primary copy-btn btn-padding-2\">Copy</a>"  ;  
+            "</div><div class=\"row justify-content-center\">"+
+            "<a href=\"http://maps.google.com/maps?q="+ result[row]['Address'] +"\" class=\"btn btn-primary btn-padding-2\" target=\"_blank\">Map It</a>" +
+            "<a class=\"btn btn-primary copy-btn btn-padding-2\">Copy</a>" ;
             out += "</div></div>";
         }
 

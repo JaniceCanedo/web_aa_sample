@@ -76,3 +76,37 @@ INSERT INTO MEETING(HOME_GROUP_ID, DY, M_TIME, M_TYPE, M_TOPIC, NOTE) VALUES
     (6, 'Wednesday', '7:30 AM', 'Open', 'Big Book', ''),
     (6, 'Friday', '7:30 AM', 'Open', 'Discussion', 'Last Friday Speaker Meeting'),
     (6, 'Saturday', '7:30 AM', 'Open', 'Discussion', '');
+
+
+
+
+INSERT INTO MEETING(HOME_GROUP_ID, DY, M_TIME, M_TYPE, M_TOPIC, NOTE) VALUES 
+    (7, 'Wednesday', '7:00 PM', 'Closed', 'Discussion', ''),
+    (7, 'Friday', '7:00 PM', 'Open', 'Speaker', ''),
+    (8, 'Saturday', '6:30 PM', 'Closed', 'Discussion', ''),
+    (9, 'Monday', '8:00 PM', 'Closed', 'Discussion', ''),
+    (9, 'Friday', '8:00 PM', 'Open', 'Speaker', ''),
+    (10, 'Monday', '6:00 PM', 'Open', 'Big Book', ''),
+    (10, 'Tuesday', '6:00 PM', 'Open', 'Discussion', ''),
+    (10, 'Thurday', '6:00 PM', 'Open', 'Discussion', ''),
+    (11, 'Sunday', '7:00 PM', 'Closed', 'Big Book', ''),
+    (11, 'Thurday', '7:00 PM', 'Closed', 'Discussion', ''),
+    (12, 'Wednesday', '6:00 PM', 'Open', 'Step Study', ''),
+    (13, 'Monday', '6:30 PM', 'Closed', 'Discussion', '4th Monday Open Speaker Meeting'),
+    (14, 'Tuesday', '8:00 PM', 'Closed', 'Discussion', ''),
+    (14, 'Saturday', '11:00 AM', 'Open', 'Speaker', ''),
+    (15, 'Tuesday', '7:00 PM', 'Closed', 'Big Book', ''),
+    (15, 'Friday', '7:00 PM', 'Open', 'Discussion', 'Last Friday Open Speaker Meeting'),
+    (16, 'Sunday', '10:00 AM', 'Open', 'Discussion', ''),
+    (16, 'Saturday', '10:00 AM', 'Open', 'Discussion', ''),
+    (17, 'Sunday', '11:00 AM', 'Open', 'Discussion', ''),
+    (18, 'Tuesday', '6:30 PM', 'Open', 'Discussion', ''),
+    (19, 'Monday', '12:00 PM', 'Open', 'Discussion', ''),
+    (19, 'Tuesdayw', '12:00 PM', 'Open', 'Discussion', ''),
+    (19, 'Wednesday', '12:00 PM', 'Open', 'Discussion', ''),
+    (19, 'Thursday', '12:00 PM', 'Open', 'Discussion', ''),
+    (19, 'Friday', '12:00 PM', 'Open', 'Discussion', ''),
+    (20, 'Tuesday', '7:00 PM', 'Closed', 'Big Book', ''),
+    (21, 'Tuesday', '7:30 AM', 'Open', 'Discussion', ''),
+    (21, 'Thursday', '7:30 AM', 'Open', 'Discussion', ''),
+    (22, 'Saturday', '1:00 PM', 'Open', 'Discussion', 'Young People Predominate');
