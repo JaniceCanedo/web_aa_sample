@@ -2230,7 +2230,10 @@ section {
     column-width: 12rem;
   }
 
+  .meeting-nav .card-header{
 
+    min-height: 75px;
+  }
 
   
   .meeting-nav .card-body{
