@@ -26,7 +26,7 @@
 }
 
 .page-section {
-  padding: 8rem 0;
+  padding: 3rem 0;
 }
 
 .h-100 {
@@ -55,6 +55,10 @@
   color:#444444
 }
 
+.t-dark:hover{
+  color:#fff
+}
+
 .f-bold{
   font-weight: bold;
 }
@@ -62,6 +66,14 @@
 .readings-main .container{
   padding-top: 250px;
   flex-direction: row;
+}
+
+.jc-hr {
+  max-width: 75%;
+  border-width: 3px;
+  border-color: #f4623a;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 
@@ -801,6 +813,7 @@ section {
 
 .featured .icon-box:hover {
   background: #e96b56;
+  color:#fff;
 }
 
 .featured .icon-box:hover i, .featured .icon-box:hover h3 a, .featured .icon-box:hover p ,  .featured .icon-box:hover svg{
@@ -896,6 +909,7 @@ section {
 .services .icon-box:hover {
   background: #e96b56;
   border-color: #e96b56;
+  color: #fff;
 }
 
 .services .icon-box:hover .icon {
@@ -2168,6 +2182,7 @@ section {
 # Meeting
 --------------------------------------------------------------*/
 
+
 .meeting-nav a {
   color: #fff !important;
   text-transform: uppercase;
@@ -2180,6 +2195,10 @@ section {
   transition: all 0.4s ease 0s;
   min-width: 8em;
   text-align: center;
+}
+
+.meeting-nav section{
+  background-color: #f5f5f5;
 }
 
 .meeting-nav a:hover {
@@ -2258,8 +2277,18 @@ section {
     padding: 0px 0px 0px 0px;
     max-width: 350px;
   }
-
-
+.meeting-nav .p-form{
+    color: #454545;
+    text-align: center;
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+  /* .meeting-nav p{
+    color: #454545;
+    text-align: center;
+    font-size: 16px;
+    padding-bottom: 20px;
+  } */
   
 
   

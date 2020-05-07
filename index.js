@@ -4,6 +4,7 @@ var bodyParser= require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 var mysql = require('mysql');
 
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"];
 
 
 
@@ -30,6 +31,10 @@ app.get("/how-works", (req,res) => {
 });
 
 app.get("/meetings", (req,res) => {
+    var d = new Date();
+    var n = d.getDay();
+
+    console.log(days[n]);
     res.render("meetings/meetings-main.ejs");
 });
 
@@ -60,42 +65,8 @@ app.get("/day", (req,res) =>{
     var out = "";
     con.query(q, function (err, result, fields) {
         if (err) throw err;
-        // console.log(result);
-        
-        // out = "<table class=\"table table-hover table-dark\"><thead><tr>";
 
-        // // res.write("<table>");
-        // // res.write("<tr>");
-        // for(var column in result[0]){
-        //     // res.write("<td><label>" + column + "</label></td>";);
-        //     out += "<th scope=\"col\" class=\"col-att\">" + column + "</th>";
-
-        // }
-
-        // //out += "<th scope=\"col\" class=\"col-att\">Map It</th>";
-        // //res.write("</tr>");
-        // out += "</tr></thead>";
-        // for(var row in result){
-        //     //res.write("<tr>");
-        //     //out += "<tbody><tr><th scope=\"row\">"+row+"</th>";
-        //     for(var column in result[row]){
-        //         //res.write("<td><label>" + result[row][column] + "</label></td>");    
-        //         out += "<td>" + result[row][column] + "</td>";
-        //     }
-
-        //     //console.log(result[row]['Location']);
-        //     out+= "<td><button type=\"button\" class=\"btn btn-primary\" href=\"loc?l="+result[row]['Location']+"\">Map</button></td>";
-        //     out += "</tr>";
-        //     //res.write("</tr>");  
-
-        // }
-        // //res.write("</table>");
-        // out += "</tbody></table>";
-
-
-        console.log(result);
-        
-        
+             
         out+="<div class=\"container col-lg-12 flex\">";
         out+="<div class=\"row d-flex justify-content-center\">";
         for(var row in result){
@@ -103,7 +74,7 @@ app.get("/day", (req,res) =>{
             out += "<h5 class=\"card-header\">"+result[row]['Home Group'] +" @ "+ result[row]['Meeting Time'] +" </h5> " +
             "<div class=\"card-body\"> "+ 
             "<h5 class=\"card-title\">Topic: "+result[row]['Meeting Topic']+" </h5> " +
-            "<p class=\"card-text\">Location: "+result[row]['Location']+"</br> Meeting: "+result[row]['Meeting Type']+"</br> Notes: "+result[row]['Notes']+"</p> " +
+            "<p class=\"card-text\">Location: "+result[row]['Location']+"</br> Day: "+result[row]['Meeting Day']+"</br> Meeting: "+result[row]['Meeting Type']+"</br> Notes: "+result[row]['Notes']+"</p> " +
             "</div><div class=\"row justify-content-center\">"+
             "<a href=\"http://maps.google.com/maps?q="+ result[row]['Address'] +"\" class=\"btn btn-primary btn-padding-2\" target=\"_blank\">Map It</a>" +
             "<a class=\"btn btn-primary copy-btn btn-padding-2\">Copy</a>" ;
@@ -114,7 +85,6 @@ app.get("/day", (req,res) =>{
        out+="</div></div>";
 
         console.log("write done");
-        console.log(out);
         res.send(out);
     });
     

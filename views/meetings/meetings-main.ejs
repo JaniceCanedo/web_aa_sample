@@ -29,6 +29,9 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+
   <!-- =======================================================
   * Template Name: Eterna - v2.0.0
   * Template URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
@@ -52,14 +55,23 @@
               <li>Meetings</li>
             </ol>
             <h2>Meetings</h2>
-            <h3>During the shelter in place order, in person meetings have been suspend. We will provide updates here when 
-              they return to meeting. Online meetings are available during this time.</h3><br>
+            
+
+          <h3 style="color:red">
+            <i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i>
+            During the shelter in place order, in person meetings have been suspend. We will provide updates here when 
+              they return to meeting. Online meetings are available during this time.
+            </h3><br>
               
               <h4>Meetings happen daily across the valley and online. Meetings provide a place to safely talk to other alcoholics about
             life situations and better understand alcoholism. All meetings held are anonymous meaning there is no mention of who 
             attended or what was said.</h4>
         </section><!-- End Breadcrumbs --> 
 
+
+
+        <%- include ('meetings-online'); %>
+        <hr class="jc-hr">
         <%- include ('meeting-nav'); %>
         
 
