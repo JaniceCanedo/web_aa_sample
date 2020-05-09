@@ -42,6 +42,10 @@ app.listen(port, () => {
     console.log("Server running on port 3001");
 });
 
+app.get("/service", (req,res) => {
+    res.render("service/service-main.ejs");
+});
+
 
 
 
