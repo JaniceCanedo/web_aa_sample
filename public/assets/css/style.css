@@ -2263,11 +2263,11 @@ section {
   }
 
   .meeting-nav .card:hover{
-    border: none;
+    border: 3px solid rgba(233, 107, 86);
     margin: 5px 5px 5px 5px;
     padding: 0px 0px 0px 0px;
-    color: #fff;
-    background: #949494;
+    /* color: #fff; */
+    
     max-width: 350px;
   }
 
@@ -2283,12 +2283,16 @@ section {
     font-size: 16px;
     padding-bottom: 20px;
   }
-  /* .meeting-nav p{
-    color: #454545;
+
+  .meeting-nav .p-form-update{
+    color: #e96b56;
+    font-size: 17px;
     text-align: center;
-    font-size: 16px;
+    text-justify: newspaper;
+    padding-left: 10rem;
+    padding-right: 10rem;
     padding-bottom: 20px;
-  } */
+  }
   
   /*--------------------------------------------------------------
 # meetings-online

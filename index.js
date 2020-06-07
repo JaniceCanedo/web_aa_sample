@@ -65,7 +65,7 @@ app.get("/day", (req,res) =>{
     var q = "SELECT h.GROUP_NM as \'Home Group\', h.LOC_NM  as \'Location\'," +
             " m.DY as \'Meeting Day\', m.M_TIME \'Meeting Time\', m.M_TYPE \'Meeting Type\'," +
             "CONCAT(ADDR_L1, \' \', CITY, \' \', ST , \' \', ZIP) \'Address\'," +
-            " m.M_TOPIC \'Meeting Topic\', m.NOTE \'Notes\' FROM MEETING m inner join HOME_GROUP h on h.ROW_ID = m.HOME_GROUP_ID WHERE DY='" + req.query.d +"' ORDER BY SUBSTRING(m.M_TIME,-2), m.M_TIME";
+            " m.M_TOPIC \'Meeting Topic\', m.NOTE \'Notes\' FROM MEETING m inner join HOME_GROUP h on h.ROW_ID = m.HOME_GROUP_ID WHERE DY='" + req.query.d +"' AND m.ACTIVE=1 ORDER BY SUBSTRING(m.M_TIME,-2), m.M_TIME";
     var out = "";
     con.query(q, function (err, result, fields) {
         if (err) throw err;
