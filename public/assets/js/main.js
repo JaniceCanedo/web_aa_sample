@@ -250,6 +250,24 @@ $(document).ready(function(){
         }
     });
   });
+      
+  $('.meeting-online-trigger').on('click', function (e) {
+    e.preventDefault();
+    $.ajax({
+        url: $(this).attr('href'),
+        data: {},
+        type: 'GET',
+        success: function(data)
+          {
+              $('#target-online').html(data)
+          },
+          error: function()
+          {
+            console.log('error ajax')
+            //alert("Failed to get data.");
+        }
+    });
+});
 })
 
 

@@ -91,8 +91,9 @@ app.get("/day", (req,res) =>{
         console.log("write done");
         res.send(out);
     });
+});
     
-    con.end();
+    // con.end();
     // var xhttp = new XMLHttpRequest();
     // xhttp.onreadystatechange = function() {
     //   if (this.readyState == 4 && this.status == 200) {
@@ -106,5 +107,50 @@ app.get("/day", (req,res) =>{
     // res.write("Hello World");
     // console.log("next");
     //res.end();
+
+    app.get("/online-day", (req,res) =>{
+        var con = mysql.createConnection({
+            host: "wm63be5w8m7gs25a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+            user: "jxo3261eq7j4m29a",
+            password: "kzc1n5gecdnooxbw",
+            database: "dj4gffrc8mownwro"
+          });
+          
+          con.connect(function(err) {
+              if (err) throw err;
+          
+          });
+
+          var q = "select DAY as \'Meeting Day\', TIME as \'Meeting Time\', TYPE as \'Meeting Type\', CODE_P as \'Access Code - Phone\'," +
+          " CODE_O as \'Access Code - Online\', PWD_P as \'Password - Phone\', PWD_O as \'Password - Onine\', PHONE as \'Phone Number\'" +
+          "from ONLINE_MEETING WHERE DAY = \'"+ req.query.d +"\' ORDER BY SUBSTRING(TIME,-2), TIME";
+            var out = "";
+            con.query(q, function (err, result, fields) {
+                if (err) throw err;
+
+           
+      out+="<div class=\"container col-lg-12 flex\">";
+      out+="<div class=\"row d-flex justify-content-center\">";
+      for(var row in result){
+          out += "<div class=\"card col-lg-4 col-md-6\" id=\"mt-card-"+row+"\" >";
+          out += "<h5 class=\"card-header\">"+result[row]['Meeting Type'] +" @ "+ result[row]['Meeting Time'] +" </h5> " +
+          "<div class=\"card-body\"> "+ 
+          "<h5 class=\"card-title\">Webex</h5> " +
+          "<p class=\"card-text\">Access Code: "+result[row]['Access Code - Online']+"</br> Password: "+result[row]['Password - Onine']+"</br> To Dial In: "+result[row]['Phone Number']+"</br> Dail In Access Code: "+result[row]['Access Code - Phone']+"</p> " +
+          "</br> Dail In Password: "+result[row]['Password - Phone']+"</p> " +
+          "</div><div class=\"row justify-content-center\">"+
+          "<a class=\"btn btn-primary copy-btn btn-padding-2\">Copy</a>" ;
+          out += "</div></div>";
+      }
+    
+           out+="</div></div>";
+    
+            console.log(req.query.d);
+            console.log("online");
+            res.send(out);
+        });
+        
+        con.end();
 });
+
 
