@@ -91,7 +91,9 @@ app.get("/day", (req,res) =>{
         console.log("write done");
         res.send(out);
     });
+    con.end();
 });
+
     
     // con.end();
     // var xhttp = new XMLHttpRequest();
@@ -136,7 +138,7 @@ app.get("/day", (req,res) =>{
           out += "<h5 class=\"card-header\">"+result[row]['Meeting Type'] +" @ "+ result[row]['Meeting Time'] +" </h5> " +
           "<div class=\"card-body\"> "+ 
           "<h5 class=\"card-title\">Webex</h5> " +
-          "<p class=\"card-text\">Access Code: "+result[row]['Access Code - Online']+"</br> Password: "+result[row]['Password - Onine']+"</br> To Dial In: "+result[row]['Phone Number']+"</br> Dail In Access Code: "+result[row]['Access Code - Phone']+"</p> " +
+          "<p class=\"card-text\">Access Code: "+result[row]['Access Code - Online']+"</br> Password: "+result[row]['Password - Onine']+"</br> To Dial In: "+result[row]['Phone Number']+"</br> Dial In Access Code: "+result[row]['Access Code - Phone']+"</p> " +
           "</br> Dail In Password: "+result[row]['Password - Phone']+"</p> " +
           "</div><div class=\"row justify-content-center\">"+
           "<a class=\"btn btn-primary copy-btn btn-padding-2\">Copy</a>" ;
