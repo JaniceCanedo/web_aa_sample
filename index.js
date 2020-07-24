@@ -139,7 +139,7 @@ app.get("/day", (req,res) =>{
           "<div class=\"card-body\"> "+ 
           "<h5 class=\"card-title\">Webex</h5> " +
           "<p class=\"card-text\">Access Code: "+result[row]['Access Code - Online']+"</br> Password: "+result[row]['Password - Onine']+"</br> To Dial In: "+result[row]['Phone Number']+"</br> Dial In Access Code: "+result[row]['Access Code - Phone']+"</p> " +
-          "</br> Dail In Password: "+result[row]['Password - Phone']+"</p> " +
+          "</br> Dial In Password: "+result[row]['Password - Phone']+"</p> " +
           "</div><div class=\"row justify-content-center\">"+
           "<a class=\"btn btn-primary copy-btn btn-padding-2\">Copy</a>" ;
           out += "</div></div>";
