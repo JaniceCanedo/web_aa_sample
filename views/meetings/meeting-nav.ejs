@@ -9,6 +9,8 @@
     <h2 class="jc2">Local Meetings</h2>
 
     <p>Select a day to see the meetings available through the Columbus/Phenix City Area</br> </p>
+
+    <p> </p>
     <p style="color:orange">
     Remember to practice good social distancing, wear a mask if you have it, and follow recommended guidlines. 
     Oh, and don't forget to bring your own coffee and cookies!
@@ -58,7 +60,19 @@
         
     </div>
     <div id="target"></div>
+
+
 </section> 
+<section>
+    <div>
+        <p style="font-weight: bold"> Printable version available here: 
+
+            <% files.map(file => { %>
+                <a href="<%= file.url %>",  style="color:orange"><%= file.name %></a>
+            <% }) %>
+        </p>
+        </div>
+</section>
 
           </div>
         </div>

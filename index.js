@@ -5,10 +5,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var mysql = require('mysql');
 
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"];
-
-
-
 const port = process.env.PORT || 3001;
+
+const ejs = require("ejs");
+const path = require("path");
+const fs = require("fs");
+
+const dirPath = path.join(__dirname, "public/pdfs");
+const files = fs.readdirSync(dirPath).map(name => {
+    return {
+      name: path.basename(name, ".pdf"),
+      url: `/pdfs/${name}`
+    };
+  });
+
 
 app.use(express.static("public"));
 
@@ -35,7 +45,7 @@ app.get("/meetings", (req,res) => {
     var n = d.getDay();
 
     console.log(days[n]);
-    res.render("meetings/meetings-main.ejs");
+    res.render("meetings/meetings-main.ejs", { files });
 });
 
 app.listen(port, () => {
@@ -45,8 +55,6 @@ app.listen(port, () => {
 app.get("/service", (req,res) => {
     res.render("service/service-main.ejs");
 });
-
-
 
 
 app.get("/day", (req,res) =>{
@@ -155,4 +163,6 @@ app.get("/day", (req,res) =>{
         con.end();
 });
 
+
+;
 
